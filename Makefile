@@ -16,9 +16,6 @@ dev:
 build:
 	go build .
 
-debug:
-	go run -gcflags "-N -l"  cmd/chatservice/main.go
-
 sqlc:
 	sqlc generate
 
