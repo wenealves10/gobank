@@ -22,4 +22,4 @@ sqlc:
 test:
 	go test -v -cover ./...
 
-.PHONY: createmigration migrate migratedown dev build debug sqlc test
+.PHONY: createmigration migrate migratedown dev build sqlc test
