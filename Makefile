@@ -4,7 +4,7 @@ createmigration:
 %:
 	@:
 
-migrate:
+migrateup:
 	migrate -path=./sql/migrations -database "postgres://gobank:gobank1234@localhost:5434?sslmode=disable&database=gobank" -verbose up
 
 migratedown:
@@ -22,4 +22,4 @@ sqlc:
 test:
 	go test -v -cover ./...
 
-.PHONY: createmigration migrate migratedown dev build sqlc test
+.PHONY: createmigration migrateup migratedown dev build sqlc test
