@@ -5,10 +5,10 @@ createmigration:
 	@:
 
 migrate:
-	migrate -path=./sql/migrations -database "YOUR_URL_DATABASE_POSTGRES" -verbose up
+	migrate -path=./sql/migrations -database "postgres://gobank:gobank1234@localhost:5434?sslmode=disable&database=gobank" -verbose up
 
 migratedown:
-	migrate -path=./sql/migrations -database "YOUR_URL_DATABASE_POSTGRES" -verbose down
+	migrate -path=./sql/migrations -database "postgres://gobank:gobank1234@localhost:5434?sslmode=disable&database=gobank" -verbose down
 
 dev:
 	go run main.go

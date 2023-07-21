@@ -11,7 +11,7 @@ import (
 
 const (
 	dbDriver = "postgres"
-	dbSource = "YourConnectionString"
+	dbSource = "postgres://gobank:gobank1234@localhost:5434?sslmode=disable&database=gobank"
 )
 
 var testQueries *Queries
