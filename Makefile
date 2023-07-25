@@ -25,4 +25,7 @@ test:
 server:
 	go run main.go
 
-.PHONY: createmigration migrateup migratedown dev build sqlc test server
+mock:
+	mockgen -source=db/sqlc/store.go -package=mocks -destination=db/mocks/store_mock.go
+
+.PHONY: createmigration migrateup migratedown dev build sqlc test server mock
