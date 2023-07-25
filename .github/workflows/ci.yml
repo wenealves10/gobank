@@ -43,8 +43,16 @@ jobs:
         sudo mv migrate.linux-amd64 /usr/bin/migrate
         which migrate
 
+    - name: Configuration variables env
+      run: |
+        touch .env
+        echo "DB_DRIVER=postgres" >> .env
+        echo "SERVER_ADDRESS=0.0.0.0:8080" >> .env
+        echo "DB_SOURCE=postgres://gobank:gobank1234@localhost:5434?sslmode=disable&database=gobank" >> .env
+  
     - name: Run migrations
-      run: make migrateup
+      run: |
+        DB_SOURCE="postgres://gobank:gobank1234@localhost:5434?sslmode=disable&database=gobank" make migrateup
 
     - name: Test
       run: make test
