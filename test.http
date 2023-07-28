@@ -11,3 +11,34 @@ GET http://localhost:8080/accounts/100
 
 ###
 GET http://localhost:8080/accounts?page_id=100&page_size=10
+
+###
+POST http://localhost:8080/transfers
+Content-Type: application/json
+
+{
+  "from_account_id": 1,
+  "to_account_id": 5,
+  "amount": 100,
+  "currency": "USD"
+}
+
+###
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "username": "wenealves",
+  "full_name": "Wene Alves",
+  "email": "wenealves@br.com",
+  "password": "123456"
+}
+
+###
+POST http://localhost:8080/users/login
+Content-Type: application/json
+
+{
+  "username": "wenealves",
+  "password": "123456"
+}
